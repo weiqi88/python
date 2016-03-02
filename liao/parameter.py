@@ -80,3 +80,17 @@ print person('weiqi',30,city='xian')
 #和可变参数类似，也可以先组装出一个dict，然后，把该dict转换为关键字参数传进去
 kw ={'city':'beijing','job':'test'}
 print person('wangyi','22',**kw)
+
+#参数定义的顺序必须是：必选参数、默认参数、可变参数和关键字参数。
+#包含上述4种参数
+def func(a,b,c=0,*args,**kw):
+	print 'a=',a,'b=',b,'c=',c,'args=',args,'kw=',kw
+
+print func(1,2)
+print func(1,2,3)
+print func(1,2,3,'a','b')
+print func(1,2,3,'a','b',x=99)
+#
+args = (1,2,3,4,5)
+ks={'x':99}
+print func(*args,**ks)
